@@ -4,39 +4,21 @@ import styles from './styles.module.css';
 export function MultiPhotosSection() {
   return (
     <section className={styles.photosSection}>
-      {/* Coluna Esquerda: Imagens */}
-      <div className={styles.leftColumn}>
-        <div className={styles.photosWrapper}>
-          <div className={styles.imageContainer}>
-            <img
-              src='/img/foto-4.webp'
-              alt='Detalhe 1'
-              className={styles.smallImage}
-            />
-          </div>
-          <div className={styles.imageContainer}>
-            <img
-              src='/img/foto-5.webp'
-              alt='Detalhe 2'
-              className={styles.smallImage}
-            />
-          </div>
-          <div className={styles.imageContainer}>
-            <img
-              src='/img/foto-6.webp'
-              alt='Detalhe 3'
-              className={styles.smallImage}
-            />
-          </div>
-        </div>
+      {/* Linha Superior: duas fotos em linha */}
+      <div className={styles.rowTop}>
+        <img className={styles.photoFour} src='/img/foto-4.webp' alt='Foto 4' />
+        <img className={styles.photoFive} src='/img/foto-5.webp' alt='Foto 5' />
       </div>
 
-      {/* Coluna Direita: Título + Descrição */}
-      <div className={styles.rightColumn}>
-        <h2 className={styles.title}>Projeto Contemporâneo</h2>
-        <p className={styles.description}>
-          O tema foi contemporâneo com detalhes em tons escuros.
-        </p>
+      {/* Linha Inferior: foto e área de texto */}
+      <div className={styles.bottomRow}>
+        <img className={styles.photoSix} src='/img/foto-6.webp' alt='Foto 6' />
+        <div className={styles.textContainer}>
+          <h2 className={styles.title}>PROJETO CONTEMPORÂNEO</h2>
+          <p className={styles.description}>
+            Bancadas e pias em mármore e granito com acabamento impecável.
+          </p>
+        </div>
       </div>
     </section>
   );

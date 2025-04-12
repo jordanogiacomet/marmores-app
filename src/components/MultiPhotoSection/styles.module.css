@@ -1,73 +1,58 @@
-/* src/components/MultiPhotosSection/styles.module.css */
-
-/* Layout em duas colunas no desktop */
+/* Container principal */
 .photosSection {
-    display: flex;
-    width: 100%;
+    padding: 4rem 2rem;
     background-color: var(--BGCOLOR, #141311);
     color: var(--FONTCOLOR, #fff);
-    padding: 2rem;
+}
+
+/* Linha superior com duas imagens */
+.rowTop {
+    display: flex;
+    flex-direction: row;
     gap: 2rem;
+    padding-bottom: 2rem;
 }
 
-.leftColumn {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/*
-  Utiliza CSS Grid para replicar o “design recortado”:
-  - Duas imagens na mesma linha (col1, col2)
-  - Terceira imagem na linha de baixo, ocupando ambas as colunas
-*/
-.photosWrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto auto;
-    gap: 1rem;
-}
-
-/*
-  Força a 3ª imagem a ocupar 2 colunas
-  (fica abaixo das duas primeiras)
-*/
-.photosWrapper > .imageContainer:nth-child(3) {
-    grid-column: 1 / span 2;
-}
-
-.imageContainer {
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.smallImage {
-    display: block;
-    width: 100%;
-    height: auto;
+/* Foto 4 ocupa 25% do espaço disponível */
+.photoFour {
+    width: 25%;
+    border-radius: 10px;
     object-fit: cover;
-    transition: transform 0.3s ease;
 }
 
-.smallImage:hover {
-    transform: scale(1.03);
+/* Foto 5 ocupa 60% do espaço disponível */
+.photoFive {
+    width: 60%;
+    border-radius: 10px;
+    object-fit: cover;
 }
 
-/* Coluna Direita: Título e descrição */
-.rightColumn {
-    flex: 1;
+/* Linha inferior com a foto e o bloco de texto */
+.bottomRow {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    gap: 2rem;
+    padding-top: 2rem;
 }
 
+/* Foto 6 ocupa 50% do espaço disponível */
+.photoSix {
+    width: 50%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Bloco de texto ocupa os restantes 50% */
+.textContainer {
+    width: 50%;
+}
+
+/* Título com tracinho amarelo */
 .title {
     font-size: 1.5rem;
     text-transform: uppercase;
     position: relative;
-    margin: 0 0 1rem;
+    margin: 0;
     padding-bottom: 0.5rem;
 }
 
@@ -81,42 +66,75 @@
     background-color: var(--PRIMARY-YELLOW, #FFDE59);
 }
 
+/* Descrição com espaçamento superior */
 .description {
     font-size: 1rem;
     line-height: 1.4;
+    padding-top: 1rem;
     margin: 0;
-    max-width: 80%;
 }
 
-/* ----------- Responsividade: Empilha colunas no mobile ----------- */
+/* Hover effect para todas as fotos */
+.photoFour:hover,
+.photoFive:hover,
+.photoSix:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+/* RESPONSIVIDADE */
+/* Em telas menores, empilha as linhas e centraliza o conteúdo */
 @media (max-width: 768px) {
     .photosSection {
+        padding: 0 1rem 2rem 1rem;
+        display: flex;
         flex-direction: column;
     }
 
-    .leftColumn,
-    .rightColumn {
+    /* Empilha as linhas da seção */
+    .rowTop,
+    .bottomRow {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0;
+    }
+
+    /* Na bottomRow, o bloco de texto deve aparecer primeiro */
+    .bottomRow {
+        flex-direction: column;
+        order: -1;
+        padding-bottom: 1.5rem;
+    }
+
+    /* Faz o bloco de texto aparecer no topo */
+    .bottomRow > .textContainer {
+        order: -1;
+    }
+
+    /* Todas as imagens ocupam 100% da largura e têm a mesma altura fixa */
+    .photoFour,
+    .photoFive,
+    .photoSix {
         width: 100%;
-        flex: none;
+        height: 40vh; /* Ajuste esse valor conforme necessário */
+        object-fit: cover;
     }
 
-    .photosWrapper {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        justify-items: center;
+    /* Centraliza e adiciona padding ao bloco de texto */
+    .textContainer {
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
     }
 
-    /*
-      Cada imagem ocupa a linha inteira,
-      então a 3ª não precisa “span 2”
-    */
-    .photosWrapper > .imageContainer:nth-child(3) {
-        grid-column: auto;
+    /* Centraliza o título e ajusta a barra amarela */
+    .title {
+        text-align: center;
+        padding-bottom: 0.75rem;
     }
 
-    .imageContainer {
-        width: 80%; /* Ajuste para controlar o tamanho no mobile */
-        max-width: 400px;
-        margin-bottom: 1rem;
+    .title::after {
+        left: 50%;
+        transform: translateX(-50%);
     }
 }

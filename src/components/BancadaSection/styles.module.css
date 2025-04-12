@@ -7,7 +7,7 @@
     height: 100vh; /* Se quiser a mesma altura do 'AboutSection' */
     background-color: var(--BGCOLOR, #141311);
     color: var(--FONTCOLOR, #fff);
-    padding: 4rem;
+    padding: 4rem 8rem;
     gap: 2rem;
 }
 
@@ -43,6 +43,7 @@
 .description {
     font-size: 1rem;
     line-height: 1.4;
+    padding-top: 1rem;
     margin: 0;
 }
 
@@ -87,12 +88,19 @@
     transform: scale(1.02);
 }
 
+@media (max-width: 1024px) {
+    .bancadaSection {
+        padding: 3.5rem;
+    }
+}
+
 /* RESPONSIVIDADE: EMPILHA CONTEÚDO NO MOBILE */
 @media (max-width: 768px) {
     .bancadaSection {
         flex-direction: column;
         height: auto; /* Permite scroll conforme o conteúdo */
         gap: 1.5rem;
+        padding: 2rem 1rem;
     }
 
     .title, .description {
