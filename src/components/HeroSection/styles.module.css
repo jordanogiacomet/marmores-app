@@ -1,0 +1,32 @@
+/* src/components/HeroSection/styles.module.css */
+.heroSection {
+    width: 100%;
+    min-height: 100vh; /* Ocupa toda a altura da viewport */
+    background: url('/img/hero_image.webp') center center no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 0 2.5%; /* Garante espaçamento horizontal, se necessário */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Overlay para suavizar a imagem e melhorar a legibilidade do texto */
+.heroSection::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(20, 19, 17, 0.6); /* Overlay escuro com opacidade – ajuste conforme necessário */
+    z-index: 1;
+}
+
+/* Garante que os elementos internos fiquem acima do overlay */
+.heroSection > * {
+    position: relative;
+    z-index: 2;
+}

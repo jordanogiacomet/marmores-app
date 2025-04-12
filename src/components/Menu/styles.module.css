@@ -1,0 +1,51 @@
+/* Menu.module.css */
+.menu {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--SECONDARY-YELLOW);
+    color: var(--FONTCOLOR-DARK);
+    text-transform: uppercase;
+}
+
+.menu img {
+    display: block;
+    width: 80px;
+    height: 80px;
+}
+
+.menu h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: var(--FS-h2); /* Usando h2 para um destaque intermediário */
+}
+
+.menu figcaption {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .menu {
+        flex-direction: column;
+        position: static;
+        padding: 0.75rem;
+        text-align: center;
+    }
+
+    .menu img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 0.5rem;
+    }
+
+    .menu h1 {
+        position: static;
+        transform: none;
+        margin: 0;
+        font-size: var(--FS-h3); /* Reduzindo para h3 em telas pequenas */
+    }
+}

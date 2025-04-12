@@ -1,0 +1,26 @@
+/* Heading.module.css */
+
+/* Estilos comuns a todos os Headings (fonte, tamanho, espaçamento...) */
+.heading {
+    font-family: var(--FF);
+    font-size: var(--FS-h1); /* Tamanho base para destaque */
+    text-transform: uppercase;
+    margin: clamp(1em, 2.5vh, 1.5rem) 0; /* exemplo de margem usando clamp */
+    line-height: 1.2;
+}
+
+/* Variação escura (texto escuro) */
+.headingDark {
+    color: var(--FONTCOLOR-DARK);
+}
+
+/* Variação clara (texto claro) */
+.headingLight {
+    color: var(--FONTCOLOR);
+}
+
+@media (max-width: 600px) {
+    .heading {
+        font-size: clamp(1.8rem, 4vw, 2rem);
+    }
+}

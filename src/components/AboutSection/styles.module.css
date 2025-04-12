@@ -1,0 +1,45 @@
+.aboutSection {
+    display: flex;
+    width: 100%;
+    height: 100vh; /* Ocupa a altura total da viewport em telas maiores */
+}
+
+/* Coluna da imagem */
+.imageContainer {
+    flex: 1;
+    background: url('public/img/about_image.webp') center center no-repeat;
+    background-size: cover;
+}
+
+/* Coluna de texto */
+.textContainer {
+    flex: 1;
+    background-color: var(--BGCOLOR);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+    text-align: center;
+}
+
+/* ------------------- */
+/* Ajuste Responsivo   */
+/* ------------------- */
+@media (max-width: 768px) {
+    .aboutSection {
+        flex-direction: column; /* Empilha imagem e texto */
+        height: auto; /* Deixa a altura se ajustar ao conteúdo no mobile */
+    }
+
+    .imageContainer {
+        width: 100%;
+        height: 50vh; /* Ajuste conforme preferir */
+    }
+
+    .textContainer {
+        width: 100%;
+        height: auto; /* Ajusta a altura de acordo com o conteúdo */
+        padding: 2rem; /* Um pouco menos de padding em telas pequenas */
+    }
+}

@@ -1,0 +1,71 @@
+/* Reset CSS Moderno */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    line-height: 1.5;
+    font-family: var(--FF), sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    background: var(--BGCOLOR);
+    color: var(--FONTCOLOR);
+}
+
+/* Remove estilos padrão de imagens e mídias */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* Herdar fontes em elementos de formulário */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Ajuste para elementos textuais */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* Links: remove decoração padrão e herda a cor */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Tabelas: colapso de bordas */
+table {
+    border-collapse: collapse;
+}
+
+/* Botões: sem estilo padrão */
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+

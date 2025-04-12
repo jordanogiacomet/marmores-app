@@ -1,0 +1,58 @@
+/* src/components/MinimalistSection/MinimalistSection.module.css */
+.section {
+    background-color: var(--BGCOLOR, #141311);
+    color: var(--FONTCOLOR, #fff);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 1rem;
+    text-align: center;
+
+}
+
+.title {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+/* Tracinho amarelo abaixo do título */
+.title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: var(--PRIMARY-YELLOW, #FFDE59);
+}
+
+.imageWrapper {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.image:hover {
+    transform: scale(1.02);
+}
+
+.description {
+    max-width: 800px;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0 1rem;
+}

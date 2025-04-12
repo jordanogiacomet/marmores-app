@@ -1,0 +1,8 @@
+/* Paragraph.module.css */
+.paragraph {
+    font-family: var(--FF);
+    font-size: var(--FS-base); /* Texto padrão adaptável */
+    color: var(--FONTCOLOR);
+    line-height: 1.6;
+    margin: var(--MARGIN);
+}

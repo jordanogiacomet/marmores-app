@@ -1,0 +1,15 @@
+/* src/components/ServicesList/ServicesList.module.css */
+.servicesSection {
+    background-color: var(--SECONDARY-YELLOW); /* Fundo amarelo */
+    padding: 4rem 2rem;
+    color: var(--FONTCOLOR-DARK);
+}
+
+/* Layout em grid moderno e responsivo */
+.servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px; /* Largura máxima do container */
+    margin: 0 auto;
+}

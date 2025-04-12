@@ -1,0 +1,43 @@
+/* Button.module.css */
+
+.button {
+    /* Dimensões e espaçamento */
+    display: inline-block;
+    padding: 0.75rem 1.5rem; /* ajustável conforme o design */
+    min-height: 44px; /* Recomendação mínima para acessibilidade em mobile */
+
+    /* Tipografia e cor */
+    font-family: var(--FF);
+    font-size: var(--FS);
+    font-weight: 600; /* dá destaque ao texto do botão */
+    color: var(--FONTCOLOR-DARK);
+    text-decoration: none; /* remove sublinhado, caso seja um link */
+    text-align: center; /* centraliza o texto no botão */
+
+    /* Cores e Borda */
+    background-color: var(--PRIMARY-YELLOW);
+    border: none;
+    border-radius: var(--BORDERRADIUS, 5px);
+
+    /* Cursores e transições */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efeito hover: muda a cor, leve efeito de “zoom” */
+.button:hover {
+    background-color: var(--SECONDARY-YELLOW);
+    transform: scale(1.03);
+}
+
+/* Efeito quando o botão é pressionado */
+.button:active {
+    background-color: var(--SECONDARY-YELLOW);
+    transform: scale(0.97);
+}
+
+/* Indica foco para quem navega por teclado ou leitor de tela */
+.button:focus {
+    outline: 2px solid var(--SECONDARY-YELLOW);
+    outline-offset: 2px; /* deixa o contorno para fora do botão */
+}

@@ -1,0 +1,122 @@
+/* src/components/MultiPhotosSection/styles.module.css */
+
+/* Layout em duas colunas no desktop */
+.photosSection {
+    display: flex;
+    width: 100%;
+    background-color: var(--BGCOLOR, #141311);
+    color: var(--FONTCOLOR, #fff);
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.leftColumn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*
+  Utiliza CSS Grid para replicar o “design recortado”:
+  - Duas imagens na mesma linha (col1, col2)
+  - Terceira imagem na linha de baixo, ocupando ambas as colunas
+*/
+.photosWrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    gap: 1rem;
+}
+
+/*
+  Força a 3ª imagem a ocupar 2 colunas
+  (fica abaixo das duas primeiras)
+*/
+.photosWrapper > .imageContainer:nth-child(3) {
+    grid-column: 1 / span 2;
+}
+
+.imageContainer {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.smallImage {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.smallImage:hover {
+    transform: scale(1.03);
+}
+
+/* Coluna Direita: Título e descrição */
+.rightColumn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    position: relative;
+    margin: 0 0 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background-color: var(--PRIMARY-YELLOW, #FFDE59);
+}
+
+.description {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 0;
+    max-width: 80%;
+}
+
+/* ----------- Responsividade: Empilha colunas no mobile ----------- */
+@media (max-width: 768px) {
+    .photosSection {
+        flex-direction: column;
+    }
+
+    .leftColumn,
+    .rightColumn {
+        width: 100%;
+        flex: none;
+    }
+
+    .photosWrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        justify-items: center;
+    }
+
+    /*
+      Cada imagem ocupa a linha inteira,
+      então a 3ª não precisa “span 2”
+    */
+    .photosWrapper > .imageContainer:nth-child(3) {
+        grid-column: auto;
+    }
+
+    .imageContainer {
+        width: 80%; /* Ajuste para controlar o tamanho no mobile */
+        max-width: 400px;
+        margin-bottom: 1rem;
+    }
+}
