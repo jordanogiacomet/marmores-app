@@ -9,7 +9,7 @@
 /* Container para a imagem de fundo */
 .imageContainer {
     flex: 1;
-    background: url('public/img/about_image.webp') center center no-repeat;
+    background: url('/img/about_image.webp') center center no-repeat;
     background-size: cover;
 }
 
