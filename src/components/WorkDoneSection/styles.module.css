@@ -1,0 +1,177 @@
+/* Container principal */
+.photosSection {
+    display: flex;
+    flex-direction: row;
+    /* Mantenha apenas o padding que deseja ter */
+    padding: 4rem 2rem;
+    /* Remove gap extra entre colunas */
+    gap: 180px;
+    margin: 0; /* Remove eventuais margens padrão do navegador */
+    background-color: var(--BGCOLOR, #141311);
+    color: var(--FONTCOLOR, #fff);
+}
+
+/* Coluna Esquerda */
+.columnLeft {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    /* Remove quaisquer margins/paddings adicionais */
+    margin: 0;
+    padding: 0;
+}
+
+/* Foto 7 */
+.photoSeven {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    /* Remove eventuais margens/paddings padrão do navegador de imagens */
+    margin: 0;
+    padding: 0;
+}
+
+/* Coluna Direita */
+.columnRight {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* Removendo gaps extras */
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Bloco de texto */
+.textContainer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+}
+
+/* Título com tracinho amarelo */
+.title {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    position: relative;
+    /* Remove margens adicionais */
+    margin: 0;
+    padding-bottom: 0.5rem;
+}
+
+.title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background-color: var(--PRIMARY-YELLOW, #FFDE59);
+}
+
+/* Descrição */
+.description {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 0; /* Remove qualquer margem extra */
+    padding-top: 1rem;
+}
+
+/* Imagem 8 */
+.imageContainer {
+
+    display: flex;
+    justify-content: end;
+    margin: 0;
+    padding: 0;
+}
+
+.photoEight {
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    margin: 0;
+    padding: 0;
+}
+
+/* Efeito Hover para as fotos */
+.photoSeven:hover,
+.photoEight:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 1024px) {
+    .photosSection {
+        gap: 60px;
+    }
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .photosSection {
+        flex-direction: column;
+        padding: 2rem 1rem; /* Ajuste se desejar, mas agora é o único espaçamento */
+        margin: 0;
+        gap: 25px; /* Remove espaços adicionais */
+        padding-top: 0;
+    }
+
+    /* Cada coluna ocupa 100% da largura */
+    .columnLeft,
+    .columnRight {
+        width: 100%;
+        flex: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .columnRight {
+        display: flex;
+        flex-direction: column;
+        order: -1;
+        padding-top: 0;
+    }
+
+    /* Força o bloco de texto a vir antes da imagem 8 */
+    .columnRight > .textContainer {
+        order: -1;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 1rem; /* Espaço mínimo para não colar no topo da imagem */
+    }
+
+    /* Centraliza o título e o tracinho amarelo */
+    .title {
+        text-align: center;
+        padding-bottom: 0.75rem;
+        margin: 0;
+    }
+
+    .title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Todas as imagens ocupam 100% e têm altura fixa */
+    .photoSeven,
+    .photoEight {
+        width: 100%;
+        height: 40vh; /* Ajuste conforme desejar */
+        object-fit: cover;
+        margin: 0;
+        padding: 0;
+    }
+}

@@ -1,10 +1,15 @@
 // src/components/BancadaSection/BancadaSection.tsx
+/**
+ * BancadaSection
+ * Exibe a seção "Projeto de Bancada" com o bloco de texto (título e descrição)
+ * e duas imagens: uma pequena (detalhe) na parte inferior da coluna esquerda e uma grande na coluna direita.
+ */
 import styles from './styles.module.css';
 
 export function BancadaSection() {
   return (
     <section className={styles.bancadaSection}>
-      {/* Coluna Esquerda: Título + Descrição + Imagem Menor */}
+      {/* Coluna Esquerda: Texto e imagem pequena */}
       <div className={styles.leftColumn}>
         <div className={styles.textContainer}>
           <h2 className={styles.title}>PROJETO DE BANCADA</h2>
@@ -21,7 +26,7 @@ export function BancadaSection() {
         </div>
       </div>
 
-      {/* Coluna Direita: Imagem Maior */}
+      {/* Coluna Direita: Imagem grande */}
       <div className={styles.rightColumn}>
         <img
           src='/img/foto-3.webp'

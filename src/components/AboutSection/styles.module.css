@@ -1,17 +1,19 @@
+/* ABOUT SECTION */
+/* Seção "Sobre Nós" – layout em duas colunas (imagem e texto) */
 .aboutSection {
     display: flex;
     width: 100%;
     height: 100vh; /* Ocupa a altura total da viewport em telas maiores */
 }
 
-/* Coluna da imagem */
+/* Container para a imagem de fundo */
 .imageContainer {
     flex: 1;
     background: url('public/img/about_image.webp') center center no-repeat;
     background-size: cover;
 }
 
-/* Coluna de texto */
+/* Container para o bloco de texto */
 .textContainer {
     flex: 1;
     background-color: var(--BGCOLOR);
@@ -23,23 +25,21 @@
     text-align: center;
 }
 
-/* ------------------- */
-/* Ajuste Responsivo   */
-/* ------------------- */
+/* RESPONSIVIDADE - Mobile */
 @media (max-width: 768px) {
     .aboutSection {
-        flex-direction: column; /* Empilha imagem e texto */
-        height: auto; /* Deixa a altura se ajustar ao conteúdo no mobile */
+        flex-direction: column;
+        height: auto;
     }
 
     .imageContainer {
         width: 100%;
-        height: 50vh; /* Ajuste conforme preferir */
+        height: 50vh;
     }
 
     .textContainer {
         width: 100%;
-        height: auto; /* Ajusta a altura de acordo com o conteúdo */
-        padding: 2rem; /* Um pouco menos de padding em telas pequenas */
+        height: auto;
+        padding: 2rem;
     }
 }

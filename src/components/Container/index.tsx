@@ -1,4 +1,7 @@
-// Container.tsx
+/**
+ * Container Component
+ * Um wrapper genérico para centralizar e limitar a largura do conteúdo.
+ */
 import React from 'react';
 import styles from './styles.module.css';
 

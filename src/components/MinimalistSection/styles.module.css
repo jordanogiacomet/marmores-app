@@ -1,5 +1,5 @@
-/* src/components/MinimalistSection/MinimalistSection.module.css */
-.section {
+/* MinimalistSection Styles */
+.minimalistSection {
     background-color: var(--BGCOLOR, #141311);
     color: var(--FONTCOLOR, #fff);
     display: flex;
@@ -7,10 +7,9 @@
     align-items: center;
     padding: 4rem 1rem;
     text-align: center;
-
 }
 
-.title {
+.minimalistTitle {
     font-size: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -18,8 +17,7 @@
     position: relative;
 }
 
-/* Tracinho amarelo abaixo do título */
-.title::after {
+.minimalistTitle::after {
     content: "";
     position: absolute;
     bottom: -10px;
@@ -30,7 +28,7 @@
     background-color: var(--PRIMARY-YELLOW, #FFDE59);
 }
 
-.imageWrapper {
+.minimalistImageWrapper {
     width: 100%;
     max-width: 800px;
     border-radius: 8px;
@@ -39,17 +37,17 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.image {
+.minimalistImage {
     width: 100%;
     height: auto;
     transition: transform 0.3s ease;
 }
 
-.image:hover {
+.minimalistImage:hover {
     transform: scale(1.02);
 }
 
-.description {
+.minimalistDescription {
     max-width: 800px;
     font-size: 1rem;
     line-height: 1.5;
@@ -58,7 +56,7 @@
 }
 
 @media (max-width: 768px) {
-    .section {
+    .minimalistSection {
         padding: 2rem 1rem;
     }
 }

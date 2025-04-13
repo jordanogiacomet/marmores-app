@@ -1,4 +1,8 @@
-// src/components/AboutSection/AboutSection.tsx
+/**
+ * AboutSection
+ * Exibe a seção "Sobre Nós" utilizando uma imagem de fundo e um bloco de texto.
+ * O componente utiliza elementos semânticos para SEO e é responsivo.
+ */
 import styles from './styles.module.css';
 import { Heading } from '../Heading';
 import { Paragraph } from '../Paragraph';
@@ -7,7 +11,6 @@ export function AboutSection() {
   return (
     <section className={styles.aboutSection}>
       <div className={styles.imageContainer} />
-
       <div className={styles.textContainer}>
         <Heading variant='light'>SOBRE NÓS</Heading>
         <Paragraph>

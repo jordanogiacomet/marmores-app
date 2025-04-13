@@ -5,6 +5,9 @@ import { ServicesList } from '../../components/ServiceList';
 import { MinimalistSection } from '../../components/MinimalistSection';
 import { BancadaSection } from '../../components/BancadaSection';
 import { MultiPhotosSection } from '../../components/MultiPhotoSection';
+import { WorkDoneSection } from '../../components/WorkDoneSection';
+import { BudgetSection } from '../../components/BudgetSection';
+import { ContactSection } from '../../components/ContactSection';
 
 export function Home() {
   return (
@@ -15,6 +18,9 @@ export function Home() {
       <MinimalistSection />
       <BancadaSection />
       <MultiPhotosSection />
+      <WorkDoneSection />
+      <BudgetSection />
+      <ContactSection />
     </MainTemplate>
   );
 }
