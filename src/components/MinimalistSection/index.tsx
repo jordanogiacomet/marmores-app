@@ -1,21 +1,12 @@
 /**
  * MinimalistSection Component
  * Exibe uma seção minimalista com título, imagem e uma breve descrição.
- * A animação de fade in é disparada uma única vez quando o componente entra na viewport.
  */
-import { useRef } from 'react';
 import styles from './styles.module.css';
-import { useInView } from '../../hooks/useInView';
 
 export function MinimalistSection() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const isVisible = useInView(sectionRef);
-
   return (
-    <section
-      ref={sectionRef}
-      className={`${styles.minimalistSection} ${isVisible ? styles.fadeIn : ''}`}
-    >
+    <section className={styles.minimalistSection}>
       <h2 className={styles.minimalistTitle}>PROJETO MINIMALISTA</h2>
       <div className={styles.minimalistImageWrapper}>
         <img
