@@ -30,3 +30,19 @@
     position: relative;
     z-index: 2;
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Classe para disparar a animação */
+.fadeIn {
+    animation: fadeIn 1s ease-out forwards;
+}

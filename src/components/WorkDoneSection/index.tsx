@@ -9,6 +9,7 @@ export function WorkDoneSection() {
           className={styles.photoSeven}
           src='/img/foto-7.webp'
           alt='Foto 7'
+          loading='lazy'
         />
       </div>
 
@@ -24,6 +25,7 @@ export function WorkDoneSection() {
             className={styles.photoEight}
             src='/img/foto-8.webp'
             alt='Foto 8'
+            loading='lazy'
           />
         </div>
       </div>

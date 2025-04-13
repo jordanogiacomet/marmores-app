@@ -22,6 +22,7 @@ export function BancadaSection() {
             src='/img/foto-2.jpg'
             alt='Detalhe de Bancada'
             className={styles.smallImage}
+            loading='lazy'
           />
         </div>
       </div>

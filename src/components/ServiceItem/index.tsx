@@ -14,7 +14,12 @@ type ServiceItemProps = {
 export function ServiceItem({ icon, title, description }: ServiceItemProps) {
   return (
     <div className={styles.serviceItem}>
-      <img src={icon} alt={title} className={styles.serviceIcon} />
+      <img
+        src={icon}
+        alt={title}
+        className={styles.serviceIcon}
+        loading='lazy'
+      />
       <h3 className={styles.serviceTitle}>{title}</h3>
       <p className={styles.serviceDescription}>{description}</p>
     </div>
